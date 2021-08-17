@@ -1,0 +1,25 @@
+
+server:
+  port: 5009
+  
+spring:
+  application:
+    name: CONFIG-SERVICE
+ 
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/CapeSoftwareTeam/Cape-Electric-Config-Server-Microservice
+          clone-on-start: true
+          timeout: 4000
+  
+           
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:5007/eureka/
+  instance:
+    hostname: localhost
